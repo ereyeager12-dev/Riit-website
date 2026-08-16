@@ -11,66 +11,111 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
+    font-family:Arial,Helvetica,sans-serif;
     background:#f5f7fb;
-    color:#222;
+    color:#172033;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
 }
 
 /* NAVBAR */
+
 nav{
-    background:#111827;
-    padding:18px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:#07101f;
+    border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.nav{
+    min-height:75px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
     color:white;
-    font-size:25px;
-    font-weight:bold;
+    font-size:26px;
+    font-weight:800;
 }
 
 .logo span{
     color:#38bdf8;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:20px;
+.links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.links a{
+    color:#e5e7eb;
     font-size:15px;
+    font-weight:bold;
+}
+
+.links a:hover{
+    color:#38bdf8;
+}
+
+.admission-btn{
+    background:#2563eb;
+    padding:10px 17px;
+    border-radius:8px;
 }
 
 /* HERO */
+
 .hero{
-    min-height:500px;
-    padding:80px 8%;
+    min-height:620px;
     display:flex;
     align-items:center;
-    background:linear-gradient(135deg,#0f172a,#1e3a8a);
     color:white;
+
+    background:
+    radial-gradient(circle at 80% 20%,rgba(56,189,248,.2),transparent 30%),
+    linear-gradient(135deg,#050b16,#172554);
 }
 
-.hero-text{
-    max-width:650px;
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:55px;
+    align-items:center;
 }
 
 .badge{
     display:inline-block;
-    background:#38bdf8;
-    color:#082f49;
-    padding:8px 15px;
+    padding:8px 16px;
     border-radius:30px;
+    background:rgba(56,189,248,.15);
+    color:#7dd3fc;
+    border:1px solid rgba(56,189,248,.3);
     font-weight:bold;
     margin-bottom:20px;
 }
 
 .hero h1{
-    font-size:50px;
+    font-size:56px;
     line-height:1.1;
     margin-bottom:20px;
 }
@@ -80,230 +125,300 @@ nav a{
 }
 
 .hero p{
+    color:#cbd5e1;
     font-size:18px;
-    line-height:1.6;
-    color:#dbeafe;
+    max-width:620px;
     margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
 }
 
 .btn{
     display:inline-block;
-    padding:14px 25px;
-    background:#38bdf8;
-    color:#082f49;
-    text-decoration:none;
-    border-radius:8px;
+    padding:14px 23px;
+    border-radius:9px;
     font-weight:bold;
 }
 
-/* ADMISSION */
-.admission{
-    text-align:center;
-    padding:50px 20px 30px;
-}
-
-.admission h2{
-    font-size:32px;
-    margin-bottom:10px;
-    color:#111827;
-}
-
-.admission p{
-    color:#64748b;
-    margin-bottom:20px;
-}
-
-/* COURSES */
-.courses{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-    max-width:1100px;
-    margin:auto;
-    padding:20px 20px 70px;
-}
-
-.card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.08);
-    border:1px solid #e5e7eb;
-}
-
-.card .icon{
-    font-size:40px;
-    margin-bottom:15px;
-}
-
-.card h3{
-    color:#1e3a8a;
-    margin-bottom:10px;
-    font-size:22px;
-}
-
-.card p{
-    color:#64748b;
-    line-height:1.6;
-}
-
-/* WHY US */
-.why{
-    background:#111827;
-    color:white;
-    text-align:center;
-    padding:60px 20px;
-}
-
-.why h2{
-    font-size:32px;
-    margin-bottom:30px;
-}
-
-.features{
-    display:flex;
-    justify-content:center;
-    gap:50px;
-    flex-wrap:wrap;
-}
-
-.feature{
-    max-width:180px;
-}
-
-.feature strong{
-    display:block;
-    font-size:18px;
-    margin-top:10px;
-}
-
-/* CONTACT */
-.contact-section{
-    padding:70px 20px;
-    background:linear-gradient(135deg,#eff6ff,#f8fafc);
-}
-
-.contact-container{
-    max-width:1000px;
-    margin:auto;
-    background:white;
-    padding:35px;
-    border-radius:20px;
-    box-shadow:0 10px 35px rgba(0,0,0,0.08);
-    text-align:center;
-}
-
-.contact-container h2{
-    font-size:35px;
-    color:#111827;
-    margin-bottom:15px;
-}
-
-.contact-container > p{
-    color:#475569;
-    font-size:17px;
-    line-height:1.7;
-    margin-bottom:25px;
-}
-
-.contact-details{
-    text-align:left;
-    max-width:650px;
-    margin:25px auto;
-    font-size:18px;
-    line-height:2;
-}
-
-.contact-details strong{
-    color:#111827;
-}
-
-.contact-details a{
-    color:#1d4ed8;
-    text-decoration:none;
-}
-
-.contact-buttons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-    margin-top:25px;
-}
-
-.call-btn,
-.whatsapp-btn{
-    display:inline-block;
-    padding:14px 25px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.call-btn{
+.blue{
     background:#2563eb;
     color:white;
 }
 
-.whatsapp-btn{
-    background:#25D366;
+.green{
+    background:#16a34a;
     color:white;
 }
 
-/* FOOTER */
-footer{
-    background:#020617;
-    color:#94a3b8;
+.outline{
+    border:1px solid #64748b;
+    color:white;
+}
+
+.hero-card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    padding:35px;
+    border-radius:22px;
+}
+
+.hero-card .icon{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.hero-card h2{
+    margin-bottom:10px;
+}
+
+.hero-card p{
+    font-size:15px;
+}
+
+.hero-card li{
+    list-style:none;
+    margin:10px 0;
+    color:#dbeafe;
+}
+
+.hero-card li::before{
+    content:"✓";
+    color:#38bdf8;
+    margin-right:9px;
+}
+
+/* STATS */
+
+.stats{
+    margin-top:-40px;
+    position:relative;
+}
+
+.stats-box{
+    background:white;
+    border-radius:18px;
+    padding:28px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    box-shadow:0 15px 40px rgba(0,0,0,.1);
+}
+
+.stat{
     text-align:center;
-    padding:25px;
+    border-right:1px solid #e5e7eb;
 }
 
-footer strong{
+.stat:last-child{
+    border:0;
+}
+
+.stat h2{
+    color:#1e3a8a;
+}
+
+.stat p{
+    color:#64748b;
+    font-size:14px;
+}
+
+/* COMMON */
+
+section{
+    scroll-margin-top:85px;
+}
+
+.section{
+    padding:85px 0;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.heading small{
+    color:#2563eb;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+.heading h2{
+    font-size:37px;
+    margin:7px 0;
+}
+
+.heading p{
+    color:#64748b;
+    max-width:650px;
+    margin:auto;
+}
+
+/* COURSES */
+
+.courses{
+    background:#f8fafc;
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:17px;
+    border:1px solid #e5e7eb;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+}
+
+.card .course-icon{
+    font-size:38px;
+    margin-bottom:13px;
+}
+
+.card h3{
+    color:#1e3a8a;
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.card p{
+    color:#64748b;
+    font-size:15px;
+}
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-box{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a);
     color:white;
+    padding:45px;
+    border-radius:22px;
+}
+
+.about-box .big{
+    font-size:60px;
+}
+
+.about-box h2{
+    margin:10px 0;
+}
+
+.about-box p{
+    color:#cbd5e1;
+}
+
+.about-text h2{
+    font-size:38px;
+    line-height:1.2;
+    margin:10px 0 17px;
+}
+
+.about-text p{
+    color:#64748b;
+}
+
+.checks{
+    list-style:none;
+    margin-top:20px;
+}
+
+.checks li{
+    margin:12px 0;
+    font-weight:bold;
+}
+
+.checks li::before{
+    content:"✓";
+    color:#2563eb;
+    background:#dbeafe;
+    border-radius:50%;
+    padding:3px 7px;
+    margin-right:9px;
 }
 
 /* MOBILE */
-@media(max-width:768px){
 
-    nav{
-        padding:15px 20px;
+@media(max-width:850px){
+
+    .hero-grid,
+    .about-grid{
+        grid-template-columns:1fr;
     }
 
-    nav a{
+    .course-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero h1{
+        font-size:45px;
+    }
+}
+
+@media(max-width:600px){
+
+    .container{
+        width:92%;
+    }
+
+    .links a:not(.admission-btn){
         display:none;
     }
 
     .hero{
-        padding:60px 25px;
-        text-align:center;
+        padding:75px 0;
     }
 
     .hero h1{
-        font-size:38px;
+        font-size:40px;
     }
 
     .hero p{
         font-size:16px;
     }
 
-    .courses{
+    .stats{
+        margin-top:20px;
+    }
+
+    .stats-box{
+        grid-template-columns:repeat(2,1fr);
+        gap:20px;
+    }
+
+    .stat{
+        border:0;
+    }
+
+    .course-grid{
         grid-template-columns:1fr;
     }
 
-    .features{
-        gap:30px;
+    .section{
+        padding:65px 0;
     }
 
-    .contact-container{
-        padding:25px 18px;
-    }
-
-    .contact-container h2{
+    .heading h2{
         font-size:30px;
-    }
-
-    .contact-details{
-        font-size:16px;
     }
 }
 </style>
@@ -311,244 +426,620 @@ footer strong{
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
-    <div class="logo">
-        RIIT<span> EDUCATION</span>
-    </div>
+<div class="container nav">
 
-    <div>
-        <a href="#home">Home</a>
-        <a href="#courses">Courses</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-    </div>
+<a href="#home" class="logo">
+RIIT<span> EDUCATION</span>
+</a>
+
+<div class="links">
+<a href="#home">Home</a>
+<a href="#courses">Courses</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+<a href="#contact" class="admission-btn">Admission</a>
+</div>
+
+</div>
 </nav>
 
-
-<!-- HERO -->
 <section class="hero" id="home">
 
-    <div class="hero-text">
+<div class="container hero-grid">
 
-        <div class="badge">
-            🎓 ADMISSION OPEN 2026
-        </div>
+<div>
 
-        <h1>
-            Build Your <span>Digital Future</span>
-        </h1>
+<div class="badge">
+🎓 ADMISSION OPEN 2026
+</div>
 
-        <p>
-            Learn computer skills, gain practical knowledge
-            and prepare yourself for a better career with
-            RIIT Education.
-        </p>
+<h1>
+Build Your
+<span>Digital Future</span>
+</h1>
 
-        <a href="#courses" class="btn">
-            Explore Courses →
-        </a>
+<p>
+Learn practical computer skills, professional applications
+and career-focused knowledge with RIIT Education, Hosir.
+Start your journey towards a brighter future.
+</p>
 
-    </div>
+<div class="buttons">
+
+<a href="#courses" class="btn blue">
+Explore Courses →
+</a>
+
+<a href="https://wa.me/919801989024?text=Hello%20RIIT%20Education,%20I%20want%20information%20about%20courses."
+class="btn green" target="_blank">
+💬 WhatsApp
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<div class="icon">💻</div>
+
+<h2>Learn. Grow. Succeed.</h2>
+
+<p>
+Professional computer education designed
+to develop practical skills and confidence.
+</p>
+
+<ul>
+<li>Practical Computer Training</li>
+<li>Professional Diploma Courses</li>
+<li>Digital Skill Development</li>
+<li>Career Focused Learning</li>
+</ul>
+
+</div>
+
+</div>
 
 </section>
 
+<div class="stats">
 
-<!-- ADMISSION -->
-<section class="admission">
+<div class="container">
 
-    <h2>Graduation, Diploma या कोई भी Course करने का सपना है?</h2>
+<div class="stats-box">
 
-    <p>
-        अपनी पढ़ाई और Career को बेहतर बनाने के लिए
-        RIIT Education से संपर्क करें।
-    </p>
+<div class="stat">
+<h2>2026</h2>
+<p>Admission Open</p>
+</div>
+
+<div class="stat">
+<h2>6+</h2>
+<p>Professional Courses</p>
+</div>
+
+<div class="stat">
+<h2>100%</h2>
+<p>Skill Focused</p>
+</div>
+
+<div class="stat">
+<h2>RIIT</h2>
+<p>Education</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<section class="section courses" id="courses">
+
+<div class="container">
+
+<div class="heading">
+<small>OUR COURSES</small>
+<h2>Professional Courses</h2>
+<p>
+Choose the right course and start building
+your digital skills.
+</p>
+</div>
+
+<div class="course-grid">
+
+<div class="card">
+<div class="course-icon">💻</div>
+<h3>DCA</h3>
+<p>
+Diploma in Computer Applications with
+essential computer and office skills.
+</p>
+</div>
+
+<div class="card">
+<div class="course-icon">🚀</div>
+<h3>ADCA</h3>
+<p>
+Advanced Diploma in Computer Applications
+with advanced practical computer knowledge.
+</p>
+</div>
+
+<div class="card">
+<div class="course-icon">📊</div>
+<h3>DFA</h3>
+<p>
+Diploma in Financial Accounting with
+practical accounting skills.
+</p>
+</div>
+
+<div class="card">
+<div class="course-icon">🖥️</div>
+<h3>DCP</h3>
+<p>
+Develop practical computer knowledge
+and professional digital skills.
+</p>
+</div>
+
+<div class="card">
+<div class="course-icon">🎯</div>
+<h3>HDCA</h3>
+<p>
+Higher Diploma in Computer Applications
+for advanced learners.
+</p>
+</div>
+
+<div class="card">
+<div class="course-icon">🎨</div>
+<h3>DTP</h3>
+<p>
+Learn desktop publishing, designing
+and professional graphics skills.
+</p>
+</div>
+
+</div>
+
+</div>
 
 </section>
+<!-- ABOUT RIIT -->
+
+<section class="section" id="about">
+
+<div class="container about-grid">
+
+<div class="about-box">
+
+<div class="big">🎓</div>
+
+<h2>RIIT Education</h2>
+
+<p>
+Your learning journey starts with the right skills.
+RIIT Education provides computer education and
+practical skill development opportunities for
+students and learners.
+</p>
+
+</div>
 
 
-<!-- COURSES -->
-<section class="courses" id="courses">
+<div class="about-text">
 
-    <div class="card">
-        <div class="icon">💻</div>
-        <h3>DCA</h3>
-        <p>
-            Diploma in Computer Applications.
-            Learn essential computer applications and skills.
-        </p>
-    </div>
+<small style="color:#2563eb;font-weight:bold;letter-spacing:2px;">
+ABOUT RIIT
+</small>
 
-    <div class="card">
-        <div class="icon">🚀</div>
-        <h3>ADCA</h3>
-        <p>
-            Advanced Diploma in Computer Applications
-            with advanced computer knowledge.
-        </p>
-    </div>
+<h2>
+Learn Skills That Build Your Future
+</h2>
 
-    <div class="card">
-        <div class="icon">📊</div>
-        <h3>DFA</h3>
-        <p>
-            Diploma in Financial Accounting and
-            practical accounting skills.
-        </p>
-    </div>
+<p>
+अगर आप Graduation, Diploma या कोई अन्य
+Course करना चाहते हैं, तो RIIT Education,
+Hosir से संपर्क करें। आपकी सुविधा और
+समय के अनुसार Course एवं Admission की
+जानकारी दी जाएगी।
+</p>
 
-    <div class="card">
-        <div class="icon">🖥️</div>
-        <h3>DCP</h3>
-        <p>
-            Develop practical computer knowledge
-            and digital skills.
-        </p>
-    </div>
+<ul class="checks">
 
-    <div class="card">
-        <div class="icon">🎯</div>
-        <h3>HDCA</h3>
-        <p>
-            Higher Diploma in Computer Applications
-            for advanced learners.
-        </p>
-    </div>
+<li>Practical Learning Environment</li>
+<li>Computer & Digital Skills</li>
+<li>Career Focused Courses</li>
+<li>Skill Development</li>
 
-    <div class="card">
-        <div class="icon">🎨</div>
-        <h3>DTP</h3>
-        <p>
-            Learn desktop publishing, designing
-            and professional graphics skills.
-        </p>
-    </div>
+</ul>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- WHY RIIT -->
-<section class="why" id="about">
 
-    <h2>Why Choose RIIT?</h2>
+<section class="section" style="background:#07101f;color:white;">
 
-    <div class="features">
+<div class="container">
 
-        <div class="feature">
-            📚
-            <strong>Practical Learning</strong>
-        </div>
+<div class="heading">
 
-        <div class="feature">
-            💻
-            <strong>Computer Training</strong>
-        </div>
+<small style="color:#38bdf8;">
+WHY RIIT?
+</small>
 
-        <div class="feature">
-            🎓
-            <strong>Career Focused</strong>
-        </div>
+<h2 style="color:white;">
+Why Choose RIIT Education?
+</h2>
 
-        <div class="feature">
-            🏆
-            <strong>Skill Development</strong>
-        </div>
+<p style="color:#94a3b8;">
+Learn practical skills and build confidence
+for your academic and career journey.
+</p>
 
-    </div>
+</div>
+
+
+<div class="course-grid">
+
+<div class="card" style="background:#111827;border-color:#263244;color:white;text-align:center;">
+<div style="font-size:40px;">📚</div>
+<h3 style="color:#38bdf8;">Practical Learning</h3>
+<p style="color:#94a3b8;">
+Focus on practical knowledge and useful
+computer skills.
+</p>
+</div>
+
+
+<div class="card" style="background:#111827;border-color:#263244;color:white;text-align:center;">
+<div style="font-size:40px;">💻</div>
+<h3 style="color:#38bdf8;">Computer Training</h3>
+<p style="color:#94a3b8;">
+Learn important computer applications
+and digital tools.
+</p>
+</div>
+
+
+<div class="card" style="background:#111827;border-color:#263244;color:white;text-align:center;">
+<div style="font-size:40px;">🎯</div>
+<h3 style="color:#38bdf8;">Career Focused</h3>
+<p style="color:#94a3b8;">
+Develop skills that support your
+academic and career journey.
+</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ADMISSION -->
+
+<section class="section">
+
+<div class="container">
+
+<div style="
+background:linear-gradient(135deg,#2563eb,#0f172a);
+color:white;
+padding:45px 35px;
+border-radius:22px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:25px;
+">
+
+<div>
+
+<h2 style="font-size:32px;margin-bottom:10px;">
+🎓 Admission Open 2026
+</h2>
+
+<p style="color:#dbeafe;">
+Start your learning journey today.
+Contact RIIT Education for course
+and admission information.
+</p>
+
+</div>
+
+<a href="https://wa.me/919801989024?text=Hello%20RIIT%20Education,%20I%20want%20information%20about%20admission."
+target="_blank"
+style="
+background:white;
+color:#1e3a8a;
+padding:14px 22px;
+border-radius:8px;
+font-weight:bold;
+white-space:nowrap;
+">
+
+WhatsApp for Admission →
+
+</a>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- CONTACT -->
-<section class="contact-section" id="contact">
 
-    <div class="contact-container">
+<section class="section" id="contact">
 
-        <h2>📞 Contact RIIT Education</h2>
+<div class="container">
 
-        <p>
-            Graduation, Diploma या कोई भी Course करने का सपना है?
-            Admission और Course की पूरी जानकारी के लिए
-            आज ही RIIT Education, Hosir से संपर्क करें।
-        </p>
+<div class="heading">
 
-        <div class="contact-details">
+<small>GET IN TOUCH</small>
 
-            <p>
-                📍 <strong>RIIT Education, Hosir</strong>
-            </p>
+<h2>Contact RIIT Education</h2>
 
-            <p>
-                📞 <strong>Mobile:</strong>
-                <a href="tel:+919801989024">
-                    +91 98019 89024
-                </a>
-            </p>
+<p>
+Have questions about courses or admission?
+Contact us directly.
+</p>
 
-            <p>
-                📞 <strong>Mobile:</strong>
-                <a href="tel:+916207385090">
-                    +91 62073 85090
-                </a>
-            </p>
-
-            <p>
-                📍 <strong>Address:</strong>
-                RIIT Campus, Main Road, Hosir,
-                Gomia, Bokaro (Jh) - 829111
-            </p>
-
-            <p>
-                🌐 <strong>Website:</strong>
-                <a href="https://www.riit.in" target="_blank">
-                    www.riit.in
-                </a>
-            </p>
-
-            <p>
-                📧 <strong>Email:</strong>
-                <a href="mailto:riithosir@gmail.com">
-                    riithosir@gmail.com
-                </a>
-            </p>
-
-        </div>
+</div>
 
 
-        <!-- IMPORTANT: WHATSAPP NUMBER -->
-        <div class="contact-buttons">
+<div class="about-grid">
 
-            <a
-                class="call-btn"
-                href="tel:+919801989024"
-            >
-                📞 Call Now
-            </a>
 
-            <a
-                class="whatsapp-btn"
-                href="https://wa.me/919801989024"
-                target="_blank"
-            >
-                💬 WhatsApp
-            </a>
+<!-- CONTACT DETAILS -->
 
-        </div>
+<div class="card">
 
-    </div>
+<h2 style="margin-bottom:25px;">
+📍 Contact Details
+</h2>
+
+
+<p style="margin:18px 0;">
+<strong>🏫 Address</strong><br>
+
+<span style="color:#64748b;">
+RIIT Campus, Main Road, Hosir<br>
+Gomia, Bokaro (Jh) - 829111
+</span>
+
+</p>
+
+
+<p style="margin:18px 0;">
+<strong>📞 Call</strong><br>
+
+<a href="tel:+916207385090"
+style="color:#2563eb;font-weight:bold;">
+
+6207385090
+
+</a>
+
+</p>
+
+
+<p style="margin:18px 0;">
+<strong>💬 WhatsApp</strong><br>
+
+<a href="https://wa.me/919801989024"
+target="_blank"
+style="color:#16a34a;font-weight:bold;">
+
+9801989024
+
+</a>
+
+</p>
+
+
+<p style="margin:18px 0;">
+<strong>📧 Email</strong><br>
+
+<a href="mailto:riithosir@gmail.com"
+style="color:#2563eb;">
+
+riithosir@gmail.com
+
+</a>
+
+</p>
+
+
+<p style="margin:18px 0;">
+<strong>🌐 Website</strong><br>
+
+<a href="https://www.riit.in"
+target="_blank"
+style="color:#2563eb;">
+
+www.riit.in
+
+</a>
+
+</p>
+
+
+<div class="buttons" style="margin-top:25px;">
+
+<a href="tel:+916207385090"
+class="btn blue">
+
+📞 Call Now
+
+</a>
+
+
+<a href="https://wa.me/919801989024?text=Hello%20RIIT%20Education,%20I%20want%20to%20know%20about%20your%20courses."
+target="_blank"
+class="btn green">
+
+💬 WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- MESSAGE -->
+
+<div class="card">
+
+<div style="font-size:55px;">
+🎓
+</div>
+
+<h2 style="margin:10px 0 15px;">
+Start Your Journey
+</h2>
+
+<p style="color:#64748b;margin-bottom:18px;">
+
+<strong>
+Graduation, Diploma या कोई भी Course
+करने का सपना है?
+</strong>
+
+</p>
+
+<p style="color:#64748b;margin-bottom:18px;">
+
+अगर आप काम, समय की कमी या अन्य कारणों
+से अपनी Graduation, Diploma या कोई अन्य
+Degree/Course पूरा नहीं कर पा रहे हैं,
+तो एक बार RIIT Education, Hosir से
+जरूर संपर्क करें।
+
+</p>
+
+<p style="color:#64748b;margin-bottom:18px;">
+
+आपकी सुविधा और समय के अनुसार उपयुक्त
+Course एवं Admission की जानकारी दी जाएगी।
+
+</p>
+
+<div style="
+background:#eff6ff;
+color:#1e3a8a;
+padding:18px;
+border-radius:12px;
+font-weight:bold;
+margin-top:20px;
+">
+
+✨ आज ही संपर्क करें और अपनी
+पढ़ाई का सपना पूरा करें!
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- FOOTER -->
+
 <footer>
 
-    <p>
-        © 2026 <strong>RIIT Education</strong>.
-        All Rights Reserved.
-    </p>
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-about">
+
+<div class="footer-logo">
+RIIT<span> EDUCATION</span>
+</div>
+
+<p>
+Professional computer education,
+diploma courses and skill development
+for a better digital future.
+</p>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>Quick Links</h4>
+
+<a href="#home">Home</a>
+<a href="#courses">Courses</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>Contact</h4>
+
+<a href="tel:+916207385090">
+📞 6207385090
+</a>
+
+<a href="https://wa.me/919801989024"
+target="_blank">
+
+💬 9801989024
+
+</a>
+
+<a href="mailto:riithosir@gmail.com">
+📧 riithosir@gmail.com
+</a>
+
+<a href="https://www.riit.in"
+target="_blank">
+
+🌐 www.riit.in
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 <strong>RIIT Education</strong>.
+All Rights Reserved.
+
+</div>
+
+</div>
 
 </footer>
+
 
 </body>
 </html>
